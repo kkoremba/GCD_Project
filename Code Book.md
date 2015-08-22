@@ -39,11 +39,17 @@ The following files are available for the train and test data. Their description
   1.  Reading data:
 
   `s_train <- read.table("UCI HAR Dataset/train/subject_train.txt", col.names = c("subject_ID"))`
+  
   `x_train <- read.table("UCI HAR Dataset/train/X_train.txt")`
+  
   `y_train <- read.table("UCI HAR Dataset/train/y_train.txt", col.names = c("action_ID"))` 
+  
   `s_test <- read.csv("UCI HAR Dataset/test/subject_test.txt", col.names = c("subject_ID"))`
+  
   `x_test <- read.table("UCI HAR Dataset/test/X_test.txt")`
+  
   `y_test <- read.table("UCI HAR Dataset/test/y_test.txt", col.names = c("action_ID"))` 
+  
   `features <- read.table("UCI HAR Dataset/features.txt", col.names = c("feature_ID", "feature_name"))`
 
   2.  Renaming features in x_train and y_train with feature names from *features* data set
@@ -51,5 +57,6 @@ The following files are available for the train and test data. Their description
   4.  Extracting only the measurements on the mean and standard deviation for each measurement. I use *grep()* function to select features with name containing *mean()* and *std()*. I also add subject Id and action Id.
   5.  Using descriptive activity names to name the activities in the data set. I use *merge()* function to join activity labels
   6.  From the previoius data set - creating a second, independent tidy data set with the average of each variable for each activity and each subject. I use *aggregate()* function to summarize data.
+  7.  Writing txt file 
 
   
